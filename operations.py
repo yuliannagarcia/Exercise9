@@ -1,22 +1,27 @@
 #  the user enters a value and assigns the input to the variable
 var = input("Please enter a value: ")
 
-# the value of var is converted to uppercase using the upper() method
-print("The value of var in upper case:", var.upper())
+# 2a: Print the value of var as upper case
+upper_Case = var.upper()
+# capitalises user's input [var] using .upper() function
 
-# Initialise a variable "count" which counts the characters in the string
-count = 0
+print(upper_Case)
 
-# this is a loop that iterates through every character in the string var
-for char in var:
-    # the count increases by 1 for each character. After the loop completes, count holds the total number of
-    # characters in the string var.
-    count += 1
+# 2b: Print the number of characters in var
+count = len(upper_Case)
+# len(upper_case) counts the characters in the user's input
 
-# print the number of characters in var
-print("The number of characters in var:", count)
+print(f"The number of characters in your sentence is {count}")
+# f("  {[other data types]} ")
+# concatenates data types and typecasts to str
 
-# Check if var contains numeric characters using isdecimal method on the input string var to check if it contains
-# only decimal characters (0 through 9). ask victoria because its not working
-contains_number = var.isdecimal()
-print(" Does var contain numeric characters?", contains_number)
+# 2c: Does it contain numeric characters? isdecimal method
+num_check = any(ltr.isdecimal() for ltr in upper_Case)
+
+# ltr refers to letters in upper_Case
+# ltr.isdecimal() a func that checks if any characters are numbers in upper_Case
+
+if num_check is True:
+    print("how'd those numbers get in there?")
+else:
+    print("wow alphabetti spaghetti")
